@@ -30,10 +30,10 @@ def random_ip_from_subnet(subnet_ip_address):
         print(e)
 
 
-def host_ping(random_ip_addr, timeout=500, requests=1):
+def host_ping(random_ip_addr):
     if random_ip_addr:
         try:
-            proc = Popen(f'ping {random_ip_addr} -w {timeout} -n {requests}', stdout=PIPE)
+            proc = Popen(f'ping {random_ip_addr}', stdout=PIPE)
             proc.wait()
 
             if proc.returncode == 0:
